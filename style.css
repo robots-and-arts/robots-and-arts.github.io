@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --highlight-color: #136c8a;
+    --link-color: #136c8a;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+h4 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 24px;
+    margin: 0;
+    color: var(--highlight-color);
+}
+
+h5 {
+    font-family: 'Noto Serif', serif;
+    font-style: italic;
+    font-size: 24px;
+    margin-top: 20px;
+    margin: 20px 0 10px 0;
+}
+
+a {
+    /* color: var(--highlight-color); */
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+b {
+    font-weight: 600;
+}
+
+.site-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 0 40px;
+    gap: 30px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.site-wrapper > * {
+    padding: 20px 0;
+}
+
+.site-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 400px;
+}
+
+.site-content-main, .site-content-secondary {
+    flex: 1;
+    overflow: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    -webkit-overflow-scrolling: touch; /* Smooth momentum scrolling */
+    scroll-behavior: smooth;
+}
+
+.site-content-main::-webkit-scrollbar, .site-content-secondary::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.site-content-main {
+    min-width: 700px;
+    padding-bottom: 30px;
+}
+
+.staff-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.staff-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+}
+
+.headshot {
+    height: 140px;
+}
+
+.staff-name .staff-title {
+    margin: 2px;
+    padding: 0;
+}
+
+.staff-name {
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.staff-title {
+    margin: 0;
+    font-style: italic;
+}
