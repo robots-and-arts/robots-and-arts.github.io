@@ -124,7 +124,6 @@ b {
 
     flex: 1;
     overflow: auto;
-    /* min-width: 700px; */
     padding-top: 14px;
     padding-bottom: 30px;
 }
@@ -229,6 +228,10 @@ b {
     .site-sidebar {
         position: relative;
         height: auto;
+        min-width: 0px;
+    }
+    .site-sidebar-bottom {
+        display: none;
     }
     .site-content-main {
         position: relative;
@@ -240,15 +243,20 @@ b {
         position: relative;
         height: auto;
         padding-top: 0;
+        /* padding-left: 30px; */
+        min-width: 0px;
+        width: auto;
     }
     .site-content-secondary-top {
         position: relative;
         display: block;
         padding-top: 0;
+;
         margin-bottom: 20px;
     }
     .site-content-secondary-bottom {
         position: relative;
+        width: auto;
         display: flex;
         flex-direction: row;
         gap: 20px;
