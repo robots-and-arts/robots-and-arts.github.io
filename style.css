@@ -70,7 +70,7 @@ h5 {
     font-style: italic;
     font-size: 24px;
     letter-spacing: 0.03em;
-    margin: 20px 0 10px 0;
+    margin: 30px 0 10px 0;
 }
 
 p {
@@ -141,7 +141,7 @@ b {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 20px 0 20px 40px;
+    padding: 10px 0 20px 40px;
     width: 370px;
     height: 100%;
 }
@@ -175,7 +175,7 @@ b {
 .slide-one img, .slide-two img, .slide-three img {
     width: 100%;
     object-fit: contain;
-    opacity: 90%;
+    /* opacity: 90%; */
 }
 
 .caption {
@@ -224,6 +224,7 @@ b {
 @media (max-width: 1200px) {
     .site-wrapper {
         flex-direction: column;
+        gap: 0;
     }
     .site-sidebar {
         position: relative;
@@ -238,10 +239,30 @@ b {
     .site-content-secondary {
         position: relative;
         height: auto;
+        padding-top: 0;
+    }
+    .site-content-secondary-top {
+        position: relative;
+        display: block;
+        padding-top: 0;
+        margin-bottom: 20px;
+    }
+    .site-content-secondary-bottom {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        flex-wrap: wrap;
     }
     .slide-one, .slide-two, .slide-three {
         position: relative;
         display: block;
+        bottom: 0;
+        left: 0;
+        right: 0;
         opacity: 1;
+    }
+    .caption {
+        margin-top: 2px;
     }
 }

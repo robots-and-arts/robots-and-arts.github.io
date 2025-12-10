@@ -131,12 +131,12 @@
                     <li><b>Week 10:</b> Final project exhibition</li>
                     <li><b>Post week 10:</b> Final project reports due</li>
                 </ul>
-
                 <h5>Schedule</h5>
                 <p>
                     TBA.
                 </p>
             </div>
+            
             <div class="site-content-secondary-bottom">
                 <div class="slide-one">
                     <img src="images/optitrack.png" alt="Optitrack">
@@ -161,10 +161,18 @@
         const slideThree = document.querySelector('.slide-three');
         
         function updateSlides() {
+            // If window width is less than 1200px, show all slides
+            if (window.innerWidth < 1200) {
+                slideOne.style.opacity = '1';
+                slideTwo.style.opacity = '1';
+                slideThree.style.opacity = '1';
+                return;
+            }
+            
             const scrollPosition = contentMain.scrollTop;
             const pageHeight = contentMain.scrollHeight - contentMain.clientHeight;
-            const oneThird = pageHeight / 3;
-            const twoThirds = (pageHeight * 2) / 3;
+            const oneThird = pageHeight * 0.3;
+            const twoThirds = pageHeight * 0.7;
             
             if (scrollPosition < oneThird) {
                 // First third: show slide one
@@ -194,5 +202,11 @@
             contentMain.scrollTop += e.deltaY;
             updateSlides();
         }, { passive: false });
+        
+        // Listen to window resize to update slides when crossing the breakpoint
+        window.addEventListener('resize', updateSlides);
+        
+        // Initial update on load
+        updateSlides();
     </script>
 </body>
