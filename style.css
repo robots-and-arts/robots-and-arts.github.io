@@ -41,7 +41,6 @@ h5 {
     font-family: 'Noto Serif', serif;
     font-style: italic;
     font-size: 24px;
-    margin-top: 20px;
     margin: 20px 0 10px 0;
 }
 
@@ -60,15 +59,6 @@ b {
     font-weight: 600;
 }
 
-#flocking {
-    /* width: 420px; */
-    width: 370px;
-    /* height: 100%; */
-    opacity: 90%;
-    background-attachment: fixed;
-    margin-bottom: 40px;
-}
-
 .site-wrapper {
     display: flex;
     flex-direction: row;
@@ -76,7 +66,6 @@ b {
     padding: 0;
     gap: 30px;
     height: 100vh;
-    /* box-sizing: border-box; */
 }
 
 .site-wrapper > * {
@@ -124,8 +113,32 @@ b {
     flex-direction: column;
     justify-content: space-between;
     padding: 20px 0 20px 40px;
-    min-width: 370px;
+    width: 370px;
     height: 100%;
+}
+
+.site-content-secondary-bottom {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: flex-end;
+    padding-right: 40px;
+    padding-bottom: 70px;
+}
+
+.site-content-secondary-bottom img {
+    width: 100%;
+    object-fit: contain;
+    opacity: 90%;
+}
+
+.caption {
+    font-size: 14px;
+    font-style: italic;
+    line-height: 14px;
+    color: var(--highlight-color);
+    margin: 0;
 }
 
 .staff-container {
@@ -160,4 +173,24 @@ b {
 .staff-title {
     margin: 0;
     font-style: italic;
+}
+
+@media (max-width: 1200px) {
+    .site-wrapper {
+        flex-direction: column;
+    }
+    .site-sidebar {
+        position: relative;
+        height: auto;
+    }
+    .site-content-main {
+        position: relative;
+        height: auto;
+        padding: 0 40px 0 40px;
+        overflow: visible;
+    }
+    .site-content-secondary {
+        position: relative;
+        height: auto;
+    }
 }
