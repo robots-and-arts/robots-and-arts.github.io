@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+@font-face {
+    font-family: 'Editorial';
+    src: url('fonts/PPEditorialNew-Italic.otf');
+}
+
+
 :root {
     --highlight-color: #136c8a;
     --link-color: #136c8a;
@@ -29,18 +35,20 @@ h3 {
 }
 
 h4 {
-    font-family: 'Noto Serif', serif;
+    font-family: 'Editorial', serif;
     font-weight: 600;
     font-style: italic;
     font-size: 24px;
+    letter-spacing: 0.03em;
     margin: 0;
     color: var(--highlight-color);
 }
 
 h5 {
-    font-family: 'Noto Serif', serif;
+    font-family: 'Editorial', serif;
     font-style: italic;
     font-size: 24px;
+    letter-spacing: 0.03em;
     margin: 20px 0 10px 0;
 }
 

@@ -148,7 +148,7 @@
                 </div>
                 <div class="slide-three">
                     <img src="images/manifold.png" alt="Manifold">
-                    <p class="caption">Manifold: learning to be lovable. Human-robot choreography, Bing Concert Hall (2025)</p>
+                    <p class="caption">Manifold: Learning to be Lovable. Human-robot choreography, Bing Concert Hall (2025)</p>
                 </div>
             </div>
             
@@ -160,7 +160,7 @@
         const slideTwo = document.querySelector('.slide-two');
         const slideThree = document.querySelector('.slide-three');
         
-        contentMain.addEventListener('scroll', function() {
+        function updateSlides() {
             const scrollPosition = contentMain.scrollTop;
             const pageHeight = contentMain.scrollHeight - contentMain.clientHeight;
             const oneThird = pageHeight / 3;
@@ -182,6 +182,17 @@
                 slideTwo.style.opacity = '0';
                 slideThree.style.opacity = '1';
             }
-        });
+        }
+        
+        // Listen to scroll events on the main content
+        contentMain.addEventListener('scroll', updateSlides);
+        
+        // Listen to wheel events on the entire document to handle scrolling
+        // when cursor is over fixed elements (sidebar, secondary content)
+        document.addEventListener('wheel', function(e) {
+            // Scroll the main content when wheel event occurs anywhere
+            contentMain.scrollTop += e.deltaY;
+            updateSlides();
+        }, { passive: false });
     </script>
 </body>
