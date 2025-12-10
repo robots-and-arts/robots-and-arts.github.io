@@ -243,7 +243,6 @@ b {
         position: relative;
         height: auto;
         padding-top: 0;
-        /* padding-left: 30px; */
         min-width: 0px;
         width: auto;
     }
@@ -251,7 +250,6 @@ b {
         position: relative;
         display: block;
         padding-top: 0;
-;
         margin-bottom: 20px;
     }
     .site-content-secondary-bottom {
@@ -259,6 +257,7 @@ b {
         width: auto;
         display: flex;
         flex-direction: row;
+        justify-content: start;
         gap: 20px;
         flex-wrap: wrap;
     }
@@ -269,6 +268,7 @@ b {
         left: 0;
         right: 0;
         opacity: 1;
+        max-width: 400px;
     }
     .caption {
         margin-top: 2px;
