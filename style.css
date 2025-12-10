@@ -6,11 +6,22 @@
 }
 
 body {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: 400;
     height: 100vh;
-    overflow: hidden;
     margin: 0;
     padding: 0;
+    color: #083d4d;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 0px;
+    font-weight: 600;
 }
 
 h3 {
@@ -34,6 +45,11 @@ h5 {
     margin: 20px 0 10px 0;
 }
 
+p {
+    line-height: 20px;
+    margin-top: 5px;
+}
+
 a {
     /* color: var(--highlight-color); */
     color: var(--link-color);
@@ -44,13 +60,23 @@ b {
     font-weight: 600;
 }
 
+#flocking {
+    /* width: 420px; */
+    width: 370px;
+    /* height: 100%; */
+    opacity: 90%;
+    background-attachment: fixed;
+    margin-bottom: 40px;
+}
+
 .site-wrapper {
     display: flex;
     flex-direction: row;
-    padding: 0 40px;
+    margin: 0;
+    padding: 0;
     gap: 30px;
     height: 100vh;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 .site-wrapper > * {
@@ -58,34 +84,56 @@ b {
 }
 
 .site-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 20px 0 20px 40px;
     min-width: 400px;
+    height: 100%;
 }
 
-.site-content-main, .site-content-secondary {
-    flex: 1;
-    overflow: auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-    -webkit-overflow-scrolling: touch; /* Smooth momentum scrolling */
-    scroll-behavior: smooth;
-}
-
-.site-content-main::-webkit-scrollbar, .site-content-secondary::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+.site-sidebar-bottom {
+    margin-bottom: 40px;
 }
 
 .site-content-main {
-    min-width: 700px;
+    padding-left: 420px; 
+    padding-right: 480px;
+
+    flex: 1;
+    overflow: auto;
+    /* min-width: 700px; */
+    padding-top: 14px;
     padding-bottom: 30px;
+}
+
+.site-content-main:first-child {
+    margin-top: 0px;
+}
+
+.site-content-secondary {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0 20px 40px;
+    min-width: 370px;
+    height: 100%;
 }
 
 .staff-container {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
 }
 
 .staff-item {
