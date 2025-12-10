@@ -5,6 +5,27 @@
     src: url('fonts/PPEditorialNew-Italic.otf');
 }
 
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('fonts/proximanova-regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('fonts/proximanova-semibold.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('fonts/proximanova-bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
 
 :root {
     --highlight-color: #136c8a;
