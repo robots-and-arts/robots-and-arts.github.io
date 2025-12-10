@@ -138,11 +138,50 @@
                 </p>
             </div>
             <div class="site-content-secondary-bottom">
-                <img src="images/optitrack.png" alt="Optitrack">
-                <p class="caption">Real-time humanoid dancing in simulation with motion capture, SRC Opening (2024)</p>
-                <!-- <img src="images/flocking.png" alt="Multi-robot flocking"> -->
+                <div class="slide-one">
+                    <img src="images/optitrack.png" alt="Optitrack">
+                    <p class="caption">Real-time humanoid dancing in simulation with motion capture, Stanford Robotics Center (2024)</p>
+                </div>
+                <div class="slide-two">
+                    <img src="images/flocking.png" alt="Multi-robot flocking">
+                    <p class="caption">Interactive multi-robot flocking installation, Stanford Robotics Center (2024)</p>
+                </div>
+                <div class="slide-three">
+                    <img src="images/manifold.png" alt="Manifold">
+                    <p class="caption">Manifold: learning to be lovable. Human-robot choreography, Bing Concert Hall (2025)</p>
+                </div>
             </div>
             
         </div>
     </div>
+    <script>
+        const contentMain = document.querySelector('.site-content-main');
+        const slideOne = document.querySelector('.slide-one');
+        const slideTwo = document.querySelector('.slide-two');
+        const slideThree = document.querySelector('.slide-three');
+        
+        contentMain.addEventListener('scroll', function() {
+            const scrollPosition = contentMain.scrollTop;
+            const pageHeight = contentMain.scrollHeight - contentMain.clientHeight;
+            const oneThird = pageHeight / 3;
+            const twoThirds = (pageHeight * 2) / 3;
+            
+            if (scrollPosition < oneThird) {
+                // First third: show slide one
+                slideOne.style.opacity = '1';
+                slideTwo.style.opacity = '0';
+                slideThree.style.opacity = '0';
+            } else if (scrollPosition < twoThirds) {
+                // Second third: show slide two
+                slideOne.style.opacity = '0';
+                slideTwo.style.opacity = '1';
+                slideThree.style.opacity = '0';
+            } else {
+                // Final third: show slide three
+                slideOne.style.opacity = '0';
+                slideTwo.style.opacity = '0';
+                slideThree.style.opacity = '1';
+            }
+        });
+    </script>
 </body>
