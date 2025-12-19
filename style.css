@@ -2,7 +2,14 @@
 
 @font-face {
     font-family: 'Editorial';
+    src: url('fonts/PPEditorialNew-Regular.otf');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Editorial';
     src: url('fonts/PPEditorialNew-Italic.otf');
+    font-style: italic;
 }
 
 @font-face {
@@ -30,6 +37,9 @@
 :root {
     --highlight-color: #136c8a;
     --link-color: #136c8a;
+    --link-hover-color: #ec1375;
+    --accent-color: #136c8a49;
+    --accent-color-light: #136c8a1a;
 }
 
 body {
@@ -79,9 +89,12 @@ p {
 }
 
 a {
-    /* color: var(--highlight-color); */
     color: var(--link-color);
     text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-hover-color);
 }
 
 b {
@@ -145,6 +158,10 @@ b {
     height: 100%;
 }
 
+.site-content-secondary-top > p {
+    margin: 2px 0;
+}
+
 .site-content-secondary-bottom {
     flex: 1;
     display: flex;
@@ -202,7 +219,7 @@ b {
 }
 
 .headshot {
-    height: 140px;
+    height: 125px;
 }
 
 .staff-name .staff-title {
@@ -217,7 +234,44 @@ b {
 
 .staff-title {
     margin: 0;
-    font-style: italic;
+    /* font-style: italic; */
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border-top: 1px solid var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
+    border-left: none;
+    border-right: none;
+    padding: 10px 8px;
+}
+
+.schedule-table {
+    margin-top: 10px;
+}
+
+th {
+    /* min-width: 50px; */
+    text-align: left;
+    font-weight: 600;
+    border-top: none;
+}
+
+.schedule-week {
+    text-align: center;
+    font-weight: 600;
+}
+
+.schedule-date {
+    font-weight: 600;
+    min-width: 60px;
+}
+
+.schedule-assignments {
+    width: 240px;
 }
 
 @media (max-width: 1200px) {
