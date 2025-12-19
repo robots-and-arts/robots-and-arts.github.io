@@ -300,5 +300,73 @@
         
         // Initial update on load
         updateSlides();
+
+        // Cursor trail effect - single line
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.id = 'cursor-trail-svg';
+        document.body.appendChild(svg);
+        
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('stroke', '#ff0a79');
+        path.setAttribute('stroke-width', '3');
+        path.setAttribute('fill', 'none');
+        path.setAttribute('stroke-linecap', 'round');
+        path.setAttribute('stroke-linejoin', 'round');
+        svg.appendChild(path);
+        
+        let points = [];
+        const maxPoints = 20;
+        let shrinkTimeout;
+        let shrinkInterval;
+        
+        function updatePath() {
+            if (points.length > 1) {
+                let pathData = `M ${points[0].x} ${points[0].y}`;
+                
+                // Use quadratic bezier curves for smooth path
+                for (let i = 1; i < points.length; i++) {
+                    const xc = (points[i].x + points[i - 1].x) / 2;
+                    const yc = (points[i].y + points[i - 1].y) / 2;
+                    pathData += ` Q ${points[i - 1].x} ${points[i - 1].y} ${xc} ${yc}`;
+                }
+                
+                // Add the last point
+                const lastPoint = points[points.length - 1];
+                pathData += ` T ${lastPoint.x} ${lastPoint.y}`;
+                
+                path.setAttribute('d', pathData);
+            } else {
+                path.setAttribute('d', '');
+            }
+        }
+        
+        document.addEventListener('mousemove', function(e) {
+            points.push({ x: e.clientX, y: e.clientY });
+            
+            // Keep only the last maxPoints points
+            if (points.length > maxPoints) {
+                points.shift();
+            }
+            
+            updatePath();
+            path.style.opacity = '1';
+            
+            // Clear existing shrink timeout and interval
+            clearTimeout(shrinkTimeout);
+            clearInterval(shrinkInterval);
+            
+            // Set new shrink timeout - shrink toward cursor after mouse stops moving
+            shrinkTimeout = setTimeout(function() {
+                shrinkInterval = setInterval(function() {
+                    if (points.length > 0) {
+                        // Remove points from the beginning (tail end)
+                        points.shift();
+                        updatePath();
+                    } else {
+                        clearInterval(shrinkInterval);
+                    }
+                }, 30);
+            }, 75);
+        });
     </script>
 </body>
