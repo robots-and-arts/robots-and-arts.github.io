@@ -93,7 +93,7 @@ a {
     text-decoration: none;
 }
 
-a:hover a:focus {
+a:hover, a:focus {
     color: var(--link-hover-color);
 }
 
