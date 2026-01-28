@@ -14,6 +14,20 @@
 
 @font-face {
     font-family: 'Proxima Nova';
+    src: url('fonts/proximanova-light.ttf');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('fonts/proximanova-lightit.ttf');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
     src: url('fonts/proximanova-regular.ttf');
     font-weight: 400;
     font-style: normal;
@@ -21,9 +35,23 @@
 
 @font-face {
     font-family: 'Proxima Nova';
+    src: url('fonts/proximanova-regularit.ttf');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
     src: url('fonts/proximanova-semibold.ttf');
     font-weight: 600;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('fonts/proximanova-semiboldit.ttf');
+    font-weight: 600;
+    font-style: italic;
 }
 
 @font-face {
@@ -93,7 +121,7 @@ a {
     text-decoration: none;
 }
 
-a:hover, a:focus {
+a:hover a:focus {
     color: var(--link-hover-color);
 }
 
@@ -271,7 +299,12 @@ th {
 }
 
 .schedule-assignments {
-    width: 240px;
+    width: 200px;
+}
+
+.schedule-readings {
+    font-size: 14px;
+    font-style: italic;
 }
 
 @media (max-width: 1200px) {
